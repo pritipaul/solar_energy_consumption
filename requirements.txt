@@ -4,8 +4,6 @@ matplotlib
 seaborn
 plotly.express
 xgboost
-pickle
-bz2
 streamlit
 scikit-learn 
 

@@ -7,5 +7,5 @@ sklearn
 xgboost
 pickle
 streamlit
-sklearn
+scikit-learn 
 

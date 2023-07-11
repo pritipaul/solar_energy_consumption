@@ -4,7 +4,7 @@ import pickle
 
 
 # Load the machine learning model
-model = pickle.load(open('./Model/ML_Model.pickle', 'rb'))
+model = pickle.load(open('./Model/Solar_Consumption_ML.pickle', 'rb'))
 
 # Set page configuration
 st.set_page_config(
@@ -17,7 +17,7 @@ st.set_page_config(
 # Define the main function to run the web application
 def run():
     # Add a title and image to the page
-    st.title("Bank Loan Prediction")
+    st.title("Energy Consumption")
     img1 = Image.open('celebal.jpeg')
     img1 = img1.resize((156, 145))
     st.sidebar.image(img1, use_column_width=False)

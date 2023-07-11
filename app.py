@@ -84,7 +84,7 @@ def run():
     date_day = st.number_input("Date_Day", min_value=00)
 
     if st.button("Predict"):
-        features = [Time0,Time1:00,Time1:30,Time2:00,Time2:30,Time3:00,Time3:30,Time4:00,Time4:30,Time5:00,Time5:30,Time6:00,Time6:30,Time7:00,Time7:30,Time8:00,Time8:30,Time9:00,Time9:30,Time10:00,Time10:30,Time11:00,Time11:30,Time12:00,Time12:30,Time13:00,Time13:30,Time14:00,Time14:30,Time15:00,Time15:30,Time16:00,Time16:30,Time17:00,Time17:30,Time18:00,Time18:30,Time19:00,Time19:30,Time20:00,Time20:30,Time21:00,Time21:30,Time22:00,Time22:30,Time23:00,Time23:30,Time0:00,Energy_Consumption,CL,GC,GG,date_year,date_month,date_day]
+        features = [Time0,Time1,Time1,Time2,Time2,Time3,Time3,Time4,Time4,Time5,Time5,Time6,Time6,Time7,Time7,Time8,Time8,Time9,Time9,Time10,Time10,Time11,Time11,Time12,Time12,Time13,Time13,Time14,Time14,Time15,Time15,Time16,Time16,Time17,Time17,Time18,Time18,Time19,Time19,Time20,Time20,Time21,Time21,Time22,Time22,Time23,Time23,Time00,Energy_Consumption,CL,GC,GG,date_year,date_month,date_day]
         predicted_label = predict_energy_consumption(features)
         st.write("Predicted Label:", predicted_label)
   

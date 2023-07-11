@@ -3,7 +3,6 @@ pandas
 matplotlib
 seaborn
 plotly.express
-sklearn
 xgboost
 pickle
 streamlit

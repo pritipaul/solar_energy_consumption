@@ -8,7 +8,7 @@ model = pickle.load(open('./Model/Solar_Consumption_ML.pickle', 'rb'))
 
 # Set page configuration
 st.set_page_config(
-    page_title="Bank Loan Prediction",
+    page_title="Energy Consumption Prediction",
     page_icon="💰",
     layout="wide"
 )
@@ -24,7 +24,7 @@ def run():
 
     # Create a sidebar with project information
     st.sidebar.header("Project Details")
-    st.sidebar.markdown("This web application predicts the likelihood of a loan approval by a bank based on the provided information.")
+    st.sidebar.markdown("This web application predicts the likelihood of a energy_consumption based on the provided information.")
 
     # Feature Input
     0:30 = st.number_input("12:30 am", min_value=0)
@@ -78,28 +78,16 @@ def run():
     Energy Consumption = st.number_input("Energy Consumption", min_value=0)
     CL	= st.radio("CL", [0, 1])
     GC	= st.radio("GC", [0, 1])
-    GG	= st.radio("GG
+    GG	= st.radio("GG", [0, 1])
+    date_year = st.number_input("Date_Year", min_value=0000)
+    date_month	= st.number_input("Date_Month", min_value=00)
+    date_day = st.number_input("Date_Day", min_value=00)
 
-    date_month	
-    date_day
-
+    if st.button("Predict"):
+        features = [0:30,1:00,1:30,2:00,2:30,3:00,3:30,4:00,4:30,5:00,5:30,6:00,6:30,7:00,7:30,8:00,8:30,9:00,9:30,10:00,10:30,11:00,11:30,12:00,12:30,13:00,13:30,14:00,14:30,15:00,15:30,16:00,16:30,17:00,17:30,18:00,18:30,19:00,19:30,20:00,20:30,21:00,21:30,22:00,22:30,23:00,23:30,0:00,Energy Consumption,CL,GC,GG,date_year,date_month,date_day]
+        predicted_label = predict_dementia(features)
+        st.write("Predicted Label:", predicted_label)
   
-    if st.button("Submit"):
-        duration = [60, 180, 240, 360, 480]
-        dur_mapping = dict(zip(dur_options, duration))
-        duration = dur_mapping[dur]
-
-        # Prepare features for prediction
-        features = [[gen, mar, dep, edu, emp, mon_income, co_mon_income, loan_amt, duration, cred, prop]]
-        prediction = model.predict(features)
-        lc = [str(i) for i in prediction]
-        ans = int("".join(lc))
-
-        # Display prediction result
-        if ans == 0:
-            st.error(f"Hello: {fn} | Account number: {account_no} | According to our analysis, you are unlikely to receive a loan from the bank.")
-        else:
-            st.success(f"Hello: {fn} | Account number: {account_no} | Congratulations! You are eligible for a loan from the bank.")
 
 
 # Run the application

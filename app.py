@@ -26,52 +26,64 @@ def run():
     st.sidebar.header("Project Details")
     st.sidebar.markdown("This web application predicts the likelihood of a loan approval by a bank based on the provided information.")
 
-    # Add a form for user inputs
-    st.header("User Inputs")
-    account_no = st.text_input('Account Number')
-    fn = st.text_input('Full Name')
+    # Feature Input
+    0:30 = st.number_input("12:30 am", min_value=0)
+    1:00 = st.number_input("1:00 am", min_value=0)
+    1:30 = st.number_input("1:30 am", min_value=0)
+    2:00 = st.number_input("2:00 am", min_value=0)
+    2:30 = st.number_input("2:30 am", min_value=0)
+    3:00 = st.number_input("3:00 am", min_value=0)
+    3:30 = st.number_input("3:30 am", min_value=0)
+    4:00 = st.number_input("4:00 am", min_value=0)
+    4:30 = st.number_input("4:30 am", min_value=0)
+    5:00 = st.number_input("5:00 am", min_value=0)
+    5:30 = st.number_input("5:30 am", min_value=0)
+    6:00 = st.number_input("6:00 am", min_value=0)
+    6:30 = st.number_input("6:30 am", min_value=0)
+    7:00 = st.number_input("7:00 am", min_value=0)
+    7:30 = st.number_input("7:30 am", min_value=0)
+    8:00 = st.number_input("8:00 am", min_value=0)
+    8:30 = st.number_input("8:30 am", min_value=0)
+    9:00 = st.number_input("9:00 am", min_value=0)
+    9:30 = st.number_input("9:30 am", min_value=0)
+    10:00 = st.number_input("10:00 am", min_value=0)
+    10:30 = st.number_input("10:30 am", min_value=0) 
+    11:00 = st.number_input("11:00 am", min_value=0)
+    11:30 = st.number_input("11:30 am", min_value=0)
+    12:00 = st.number_input("12:00 pm", min_value=0)
+    12:30 = st.number_input("12:30 pm", min_value=0)
+    13:00 = st.number_input("1:00 pm", min_value=0)
+    13:30 = st.number_input("1:30 pm", min_value=0)
+    14:00 = st.number_input("2:00 pm", min_value=0)
+    14:30 = st.number_input("2:30 pm", min_value=0)
+    15:00 = st.number_input("3:00 pm", min_value=0)
+    15:30 = st.number_input("3:30 pm", min_value=0)
+    16:00 = st.number_input("4:00 pm", min_value=0)
+    16:30 = st.number_input("4:30 pm", min_value=0)
+    17:00 = st.number_input("5:00 pm", min_value=0)
+    17:30 = st.number_input("5:30 pm", min_value=0)
+    18:00 = st.number_input("6:00 pm", min_value=0)
+    18:30 = st.number_input("6:30 pm", min_value=0)
+    19:00 = st.number_input("7:00 pm", min_value=0)
+    19:30 = st.number_input("7:30 pm", min_value=0)
+    20:00 = st.number_input("8:00 pm", min_value=0)
+    20:30 = st.number_input("8:30 pm", min_value=0)
+    21:00 = st.number_input("9:00 pm", min_value=0)
+    21:30 = st.number_input("9:30 pm", min_value=0)
+    22:00 = st.number_input("10:00 pm", min_value=0)
+    22:30 = st.number_input("10:30 pm", min_value=0)
+    23:00 = st.number_input("11:00 pm", min_value=0)
+    23:30 = st.number_input("11:30 pm", min_value=0)
+    0:00 = st.number_input("12:00 am", min_value=0)
+    Energy Consumption = st.number_input("Energy Consumption", min_value=0)
+    CL	= st.radio("CL", [0, 1])
+    GC	= st.radio("GC", [0, 1])
+    GG	= st.radio("GG
 
-    # Gender
-    gen_options = ['Female', 'Male']
-    gen = st.selectbox("Gender", gen_options)
+    date_month	
+    date_day
 
-    # Marital Status
-    mar_options = ['No', 'Yes']
-    mar = st.selectbox("Marital Status", mar_options)
-
-    # Dependents
-    dep_options = ['No', 'One', 'Two', 'More than Two']
-    dep = st.selectbox("Dependents", dep_options)
-
-    # Education
-    edu_options = ['Not Graduate', 'Graduate']
-    edu = st.selectbox("Education", edu_options)
-
-    # Employment Status
-    emp_options = ['Job', 'Business']
-    emp = st.selectbox("Employment Status", emp_options)
-
-    # Property Area
-    prop_options = ['Rural', 'Semi-Urban', 'Urban']
-    prop = st.selectbox("Property Area", prop_options)
-
-    # Credit Score
-    cred_options = ['Between 300 to 500', 'Above 500']
-    cred = st.selectbox("Credit Score", cred_options)
-
-    # Applicant's Monthly Income
-    mon_income = st.number_input("Applicant's Monthly Income ($)", value=0)
-
-    # Co-Applicant's Monthly Income
-    co_mon_income = st.number_input("Co-Applicant's Monthly Income ($)", value=0)
-
-    # Loan Amount
-    loan_amt = st.number_input("Loan Amount ($)", value=0)
-
-    # Loan Duration
-    dur_options = ['2 Months', '6 Months', '8 Months', '1 Year', '16 Months']
-    dur = st.selectbox("Loan Duration", dur_options)
-
+  
     if st.button("Submit"):
         duration = [60, 180, 240, 360, 480]
         dur_mapping = dict(zip(dur_options, duration))

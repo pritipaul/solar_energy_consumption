@@ -27,7 +27,7 @@ def run():
     st.sidebar.markdown("This web application predicts the likelihood of a energy_consumption based on the provided information.")
 
     # Feature Input
-    12:30 = st.number_input("12:30 am", min_value=0)
+    Time(12:30) = st.number_input("12:30 am", min_value=0)
     1:00 = st.number_input("1:00 am", min_value=0)
     1:30 = st.number_input("1:30 am", min_value=0)
     2:00 = st.number_input("2:00 am", min_value=0)

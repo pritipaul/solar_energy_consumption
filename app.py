@@ -75,7 +75,6 @@ def run():
     Time2300 = st.number_input("11:00 pm")
     Time2330 = st.number_input("11:30 pm")
     Time000 = st.number_input("12:00 am")
-    Energy_Consumption = st.number_input("Energy Consumption", min_value=0)
     CL	= st.radio("CL", [0, 1])
     GC	= st.radio("GC", [0, 1])
     GG	= st.radio("GG", [0, 1])
@@ -84,7 +83,7 @@ def run():
     date_day = st.number_input("Date_Day", min_value=00)
 
     if st.button("Predict"):
-        features = [Time030,Time100,Time130,Time200,Time230,Time300,Time330,Time400,Time430,Time500,Time530,Time600,Time630,Time700,Time730,Time800,Time830,Time900,Time930,Time1000,Time1030,Time1100,Time1130,Time1200,Time1230,Time1300,Time1330,Time1400,Time1430,Time1500,Time1530,Time1600,Time1630,Time1700,Time1730,Time1800,Time1830,Time1900,Time1930,Time2000,Time2030,Time2100,Time2130,Time2200,Time2230,Time2300,Time2330,Time0000,Energy_Consumption,CL,GC,GG,date_year,date_month,date_day]
+        features = [Time030,Time100,Time130,Time200,Time230,Time300,Time330,Time400,Time430,Time500,Time530,Time600,Time630,Time700,Time730,Time800,Time830,Time900,Time930,Time1000,Time1030,Time1100,Time1130,Time1200,Time1230,Time1300,Time1330,Time1400,Time1430,Time1500,Time1530,Time1600,Time1630,Time1700,Time1730,Time1800,Time1830,Time1900,Time1930,Time2000,Time2030,Time2100,Time2130,Time2200,Time2230,Time2300,Time2330,Time0000,CL,GC,GG,date_year,date_month,date_day]
         predicted_label = predict_energy_consumption(features)
         st.write("Predicted Label:", predicted_label)
   

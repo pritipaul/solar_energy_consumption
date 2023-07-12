@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 # Load the machine learning model
-model = pickle.load(open('./Model/Solar_Consumption_ML.pickle', 'rb'))
+model = pickle.load(open('./Model/Solar_Consumption_ML_xgb.pickle', 'rb'))
 
 # Set page configuration
 st.set_page_config(

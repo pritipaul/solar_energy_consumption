@@ -8,7 +8,7 @@ import xgboost as xgb
 model = pickle.load(open('./Model/Solar_Consumption_ML_xgb.pickle', 'rb'))
 
 # Set page configuration
-st.set_page_config(  
+st.set_page_config(
     page_title="Energy Consumption Prediction",
     page_icon="💰",
     layout="wide"
@@ -30,7 +30,7 @@ def predict_energy_consumption(input_data):
     
     input_array = np.array([list(input_dict.values())], dtype=np.float64)
     
-    input_matrix = xgb.DMatrix(input_array)
+    input_matrix = xgb.DMatrix(data=input_array, feature_names=input_columns)
     prediction = model.predict(input_matrix)
     pred = '{0:.{1}f}'.format(prediction[0], 2)
     return float(pred)

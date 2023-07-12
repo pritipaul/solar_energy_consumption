@@ -29,8 +29,8 @@ def predict_forest(input_data):
     
     input_array = np.array([list(input_dict.values())], dtype=np.float64)
     
-    prediction = model.predict_proba(input_array)
-    pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+    prediction = model.predict(input_array)
+    pred = '{0:.{1}f}'.format(prediction[0], 2)
     return float(pred)
 
 # Define the main function to run the web application
@@ -60,7 +60,7 @@ def run():
 
     if st.button("Predict"):
         output = predict_forest(input_data)
-        st.success('The probability of energy consumption is: {}'.format(output))
+        st.success('The predicted energy consumption is: {}'.format(output))
 
 # Run the application
 run()

@@ -13,12 +13,14 @@ st.set_page_config(
     layout="wide"
 )
 
-def predict_energy_consumption(Time030,Time100,Time130,Time200,Time230,Time300,Time330,Time400,Time430,Time500,Time530,Time600,Time630,Time700,Time730,Time800,Time830,Time900,Time930,Time1000,Time1030,Time1100,Time1130,Time1200,Time1230,Time1300,Time1330,Time1400,Time1430,Time1500,Time1530,Time1600,Time1630,Time1700,Time1730,Time1800,Time1830,Time1900,Time1930,Time2000,Time2030,Time2100,Time2130,Time2200,Time2230,Time2300,Time2330,Time000,CL,GC,GG,date_year,date_month,date_day){
-    
+def predict_forest(0:30,1:00,1:30,2:00,2:30,3:00,3:30,4:00,4:30,5:00,5:30,6:00,6:30,7:00,7:30,8:00,8:30,9:00,9:30,10:00,10:30,11:00,11:30,12:00,12:30,13:00,13:30,14:00,14:30,15:00,15:30,16:00,16:30,17:00,17:30,18:00,18:30,19:00,19:30,20:00,20:30,21:00,21:30,22:00,22:30,23:00,23:30,0:00,CL,GC,GG,date_year,date_month,date_day):
+    input=np.array([[0:30,1:00,1:30,2:00,2:30,3:00,3:30,4:00,4:30,5:00,5:30,6:00,6:30,7:00,7:30,8:00,8:30,9:00,9:30,10:00,10:30,11:00,11:30,12:00,12:30,13:00,13:30,14:00,14:30,15:00,15:30,16:00,16:30,17:00,17:30,18:00,18:30,19:00,19:30,20:00,20:30,21:00,21:30,22:00,22:30,23:00,23:30,0:00,CL,GC,GG,date_year,date_month,date_day]]).astype(np.float64)
+    prediction=model.predict_proba(input)
+    pred='{0:.{1}f}'.format(prediction[0][0], 2)
+    return float(pred)
 
 
 
-}
 
 
 # Define the main function to run the web application
@@ -34,8 +36,8 @@ def run():
     st.sidebar.markdown("This web application predicts the likelihood of a energy_consumption based on the provided information.")
 
     # Feature Input
-    Time030 = st.number_input("12:30 am")
-    Time100 = st.number_input("1:00 am")
+    0:30 = st.number_input("12:30 am")
+    1:00 = st.number_input("1:00 am")
     Time130 = st.number_input("1:30 am")
     Time200 = st.number_input("2:00 am")
     Time230 = st.number_input("2:30 am")
@@ -89,10 +91,11 @@ def run():
     date_month	= st.number_input("Date_Month", min_value=00)
     date_day = st.number_input("Date_Day", min_value=00)
 
-    if st.button("Predict"):
-        features = [Time030,Time100,Time130,Time200,Time230,Time300,Time330,Time400,Time430,Time500,Time530,Time600,Time630,Time700,Time730,Time800,Time830,Time900,Time930,Time1000,Time1030,Time1100,Time1130,Time1200,Time1230,Time1300,Time1330,Time1400,Time1430,Time1500,Time1530,Time1600,Time1630,Time1700,Time1730,Time1800,Time1830,Time1900,Time1930,Time2000,Time2030,Time2100,Time2130,Time2200,Time2230,Time2300,Time2330,Time000,CL,GC,GG,date_year,date_month,date_day]
-        predicted_label = predict_energy_consumption(features)
-        st.write("Predicted Label:", predicted_label)
+   
+     if st.button("Predict"):
+            output=predict_forest(0:30,1:00,1:30,2:00,2:30,3:00,3:30,4:00,4:30,5:00,5:30,6:00,6:30,7:00,7:30,8:00,8:30,9:00,9:30,10:00,10:30,11:00,11:30,12:00,12:30,13:00,13:30,14:00,14:30,15:00,15:30,16:00,16:30,17:00,17:30,18:00,18:30,19:00,19:30,20:00,20:30,21:00,21:30,22:00,22:30,23:00,23:30,0:00,CL,GC,GG,date_year,date_month,date_day)
+            st.success('The probability of fire taking place is {}'.format(output))
+
   
 
 

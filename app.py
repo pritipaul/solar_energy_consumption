@@ -48,7 +48,7 @@ def run():
     # Feature Input
     input_data = []
     for i in range(24):
-        input_val = st.number_input(f"{i}:00", min_value=0.0
+        input_val = st.number_input(f"{i}:00", min_value=0.0)
         for j in range(24):
             input_val = st.number_input(f"{j}:30", min_value=0.0)
             input_data.append(input_val)

@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import pickle
 import numpy as np
+import xgboost as xgb
 
 # Load the machine learning model
 model = pickle.load(open('./Model/Solar_Consumption_ML_xgb.pickle', 'rb'))
@@ -29,7 +30,8 @@ def predict_energy_consumption(input_data):
     
     input_array = np.array([list(input_dict.values())], dtype=np.float64)
     
-    prediction = model.predict(input_array)
+    input_matrix = xgb.DMatrix(input_array)
+    prediction = model.predict(input_matrix)
     pred = '{0:.{1}f}'.format(prediction[0], 2)
     return float(pred)
 

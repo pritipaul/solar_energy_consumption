@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide"
 )
 
-def predict_forest(input_data):
+def predict_energy_consumption(input_data):
     input_columns = ['0:30', '1:00', '1:30', '2:00', '2:30', '3:00', '3:30', '4:00', '4:30', '5:00', '5:30', '6:00', '6:30',
                      '7:00', '7:30', '8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
                      '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00',
@@ -60,7 +60,7 @@ def run():
     date_day = st.number_input("Date_Day", min_value=0)
 
     if st.button("Predict"):
-        output = predict_forest(input_data)
+        output = predict_energy_consumption(input_data)
         st.success('The predicted energy consumption is: {}'.format(output))
 
 # Run the application

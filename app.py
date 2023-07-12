@@ -8,7 +8,7 @@ import xgboost as xgb
 model = pickle.load(open('./Model/Solar_Consumption_ML_xgb.pickle', 'rb'))
 
 # Set page configuration
-st.set_page_config(
+st.set_page_config(  
     page_title="Energy Consumption Prediction",
     page_icon="💰",
     layout="wide"

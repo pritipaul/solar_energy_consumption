@@ -47,11 +47,14 @@ def run():
 
     # Feature Input
     input_data = []
-    # for i in range(24):
-    #     input_val = st.number_input(f"{i}:30", min_value=0.0)
-    #     input_data.append(input_val)
+    for i in range(24):
+        input_val = st.number_input(f"{i}:00", min_value=0.0
+        for j in range(24):
+            input_val = st.number_input(f"{j}:30", min_value=0.0)
+            input_data.append(input_val)
 
-    0:30 = st.number_input("12:30", min_value=0.0)
+        input_data.append(input_val)
+
     CL = st.radio("CL", [0, 1])
     GC = st.radio("GC", [0, 1])
     GG = st.radio("GG", [0, 1])
